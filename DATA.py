@@ -5,8 +5,5 @@ class Urls:
     ACCOUNT_URL = f'{MAIN_PAGE_URL}account/profile'
     LOGIN_URL = f'{MAIN_PAGE_URL}login'
     ORDER_URL = f'{MAIN_PAGE_URL}feed'
-
-
-class TestData:
-    EMAIL = 'TEST@YAA.RUU'
-    PASSWORD = '12345678'
+    STATIC_EMAIL = 'TEST@YAA.RUU'
+    STATIC_PASSWORD = '12345678'

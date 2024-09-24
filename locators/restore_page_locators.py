@@ -1,5 +1,6 @@
 from selenium.webdriver.common.by import By
 
+
 class RestorePageLocators:
     SAVE_BUTTON = By.XPATH, "//button[text()='Сохранить']"
     NEW_PASS_FIELD = By.XPATH, ".//input[@name = 'Введите новый пароль']"
