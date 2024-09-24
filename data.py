@@ -1,4 +1,4 @@
-class Urls:
+class UserData:
     MAIN_PAGE_URL = f'https://stellarburgers.nomoreparties.site/'
     FORGOT_PASSWORD_URL = f'{MAIN_PAGE_URL}forgot-password'
     RESET_PASSWORD_URL = f'{MAIN_PAGE_URL}reset-password'

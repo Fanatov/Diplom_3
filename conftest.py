@@ -1,7 +1,7 @@
 import pytest
 from selenium import webdriver
 
-import DATA
+import data
 
 
 def pick_driver(driver):
