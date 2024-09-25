@@ -1,7 +1,11 @@
+import time
+
 from seletools.actions import drag_and_drop
 from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.support import expected_conditions
 from selenium.webdriver.support.wait import WebDriverWait
+
+from locators.main_page_locators import MainPageLocators
 
 
 class BasePage:
@@ -9,10 +13,7 @@ class BasePage:
     def __init__(self, driver):
         self.driver = driver
 
-    def wait_element_to_be_clickable(self, locator):
-        return WebDriverWait(self.driver, 5).until(expected_conditions.element_to_be_clickable(locator))
-
-    def click_element(self, locator):  # Клик на элемент
+    def click_element(self, locator):
         element = self.wait_element_to_be_clickable(locator)
         return element.click()
 
@@ -23,6 +24,9 @@ class BasePage:
 
     def current_url(self):
         return self.driver.current_url
+
+    def wait_element_to_be_clickable(self, locator):
+        return WebDriverWait(self.driver, 10).until(expected_conditions.element_to_be_clickable(locator))
 
     def visibility_of_element_located(self, locator):  # Ожидание отображения элемента
         return WebDriverWait(self.driver, 5).until(expected_conditions.visibility_of_element_located(locator))
@@ -44,6 +48,6 @@ class BasePage:
     def get_text(self, locator):
         return self.presence_of_element_detected(locator).text
 
-    def scroll_to_element(self, locator):
+    def execute_script(self, locator):
         element = self.visibility_of_element_located(locator)
-        return self.driver.scroll_to_element("arguments[0].scrollIntoView();", element)
+        return self.driver.execute_script("arguments[0].scrollIntoView();", element)
