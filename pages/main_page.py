@@ -116,3 +116,4 @@ class MainPage(BasePage):
     def get_order_number(self):
         count = self.get_text(MainPageLocators.ORDER_NUMBER)
         return count
+
