@@ -101,11 +101,11 @@ class MainPage(BasePage):
 
     @allure.step('Добавляем бургер')
     def add_bun_to_cart(self):
-        return self.drag_and_drop_elements(MainPageLocators.BUN_N200I,
+        return self.drag_and_drop_elements(MainPageLocators.BUN,
                                                     MainPageLocators.CREATE_BURGER_BUN_DOWN)
 
     @allure.step('Создаем заказ')
-    def make_complete_order_n200_bun(self):
+    def make_complete_order(self):
         self.click_constructor_button()
         self.add_bun_to_cart()
         self.click_make_order_button()
@@ -116,4 +116,3 @@ class MainPage(BasePage):
     def get_order_number(self):
         count = self.get_text(MainPageLocators.ORDER_NUMBER)
         return count
-

@@ -3,6 +3,7 @@ from selenium import webdriver
 from pages.main_page import MainPage
 from pages.login_page import LoginPage
 from data import UserData
+from pages.personal_account_page import PersonalAccount
 
 
 def pick_driver(name):
@@ -12,7 +13,7 @@ def pick_driver(name):
         return webdriver.Firefox()
 
 
-@pytest.fixture(params=['chrome'])
+@pytest.fixture(params=['chrome', 'firefox'])
 def driver(request):
     driver = pick_driver(request.param)
     driver.get(UserData.MAIN_PAGE_URL)
@@ -31,3 +32,4 @@ def popup(driver):
     user.click_enter_button()
     user = MainPage(driver)
     user.wait_for_personal_account_button_located()
+
