@@ -71,6 +71,5 @@ class TestOrderFeed:
         user.click_order_feed_button()
         user = OrderFeedPage(driver)
         user.wait_for_work_counter_observed()
-        time.sleep(2)
         in_work_counter = user.get_count_orders_in_work()
         assert order_counter == in_work_counter
