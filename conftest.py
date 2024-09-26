@@ -3,7 +3,6 @@ from selenium import webdriver
 from pages.main_page import MainPage
 from pages.login_page import LoginPage
 from data import UserData
-from pages.personal_account_page import PersonalAccount
 
 
 def pick_driver(name):

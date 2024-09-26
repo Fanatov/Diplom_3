@@ -1,5 +1,3 @@
-import time
-
 from conftest import driver, popup
 from pages.main_page import MainPage
 from pages.personal_account_page import PersonalAccount

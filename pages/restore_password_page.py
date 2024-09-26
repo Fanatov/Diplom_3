@@ -33,4 +33,3 @@ class RestorePasswordPage(BasePage):
     @allure.step('Проверяем отображение текста в поле "Восстановить пароль"')
     def check_text_in_field(self):
         return self.check_element_is_displayed(RestorePageLocators.RESTORE_PASSWORD_FIELD)
-
